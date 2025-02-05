@@ -141,15 +141,15 @@ h1 {
     padding: 15px;
   }
   h1{
-    font-size: 20px;
+    font-size: 22px;
   }
   .instructions{
-    font-size: 13px;
+    font-size: 16px;
     padding: 8px;
   }
   .color-box{
-    width: 130px;
-    height: 130px;
+    width: 160px;
+    height: 160px;
   }
   .game-status{
     font-size: 16px;

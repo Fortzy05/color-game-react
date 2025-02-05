@@ -12,7 +12,7 @@ function App() {
   const [targetColor, setTargetColor] = useState(randomColor());
   const [score, setScore] = useState(0);
   const [status, setStatus] = useState("");
-  const [background, setBackground] = useState("#f5f5f5");
+  const [background, setBackground] = useState("#ffffff");
   function randomColor() {
     return colors[Math.floor(Math.random() * colors.length)];
   }
