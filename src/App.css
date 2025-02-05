@@ -1,42 +1,132 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+@import url('https://fonts.googleapis.com/css2?family=Imbue:opsz,wght@10..100,100..900&family=Lobster&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  /* background-color: #f5f5f5; */
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  transition: background-color 0.5s ease-in-out;
+
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 25px;
   text-align: center;
+  width: 420px;
+  max-width: 90%;
+  transition: all 0.3s ease-in-out;
+
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 {
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #222;
+  margin-bottom: 15px;
+  background: linear-gradient(to right, #007bff, #00d4ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.instructions {
+  font-size: 16px;
+  font-weight: 500;
+  color: #444;
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 8px;
+  border-left: 5px solid #007bff;
+  /* border-right: 5px solid #007bff; */
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.card {
-  padding: 2em;
+.color-box {
+  width: 140px;
+  height: 140px;
+  border-radius: 8px;
+  margin: 20px auto;
+  /* border: 3px solid #222; */
+  transition: all 0.3s ease-in-out;
 }
 
-.read-the-docs {
-  color: #888;
+.color-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 15px;
+}
+
+.color-button {
+  width: 80px;
+  color: white;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+}
+
+.color-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* button {
+ 
+  margin-top: 20px;
+  
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  border: none;
+  transition: background 0.3s ease-in-out;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+
+} */
+
+.game-status {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+}
+
+.score {
+  font-size: 20px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.new-game-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-top: 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.new-game-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
 }
