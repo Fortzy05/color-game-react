@@ -23,7 +23,7 @@ function App() {
       setStatus("Correct! 🎉 🎉 🎉");
       setBackground(color);
       setTimeout(() => {
-        setBackground("#f5f5f5");
+        setBackground("#ffffff");
       }, 2000);
     } else {
       setStatus("Wrong! Try again.❌");
@@ -32,7 +32,7 @@ function App() {
   function resetGame() {
     setTargetColor(randomColor());
     setStatus("");
-    setBackground("#f5f5f5");
+    setBackground("#ffffff");
   }
   return (
     <main className="container" style={{backgroundColor: background}}>
