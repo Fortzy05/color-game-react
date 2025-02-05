@@ -137,7 +137,7 @@ h1 {
     
   }
   .container{
-    width: 95%;
+    width: 100%;
     padding: 15px;
   }
   h1{
@@ -153,6 +153,7 @@ h1 {
   }
   .game-status{
     font-size: 16px;
+    color: #222;
   }
   .score{
     font-size: 16px;
