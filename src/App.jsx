@@ -15,27 +15,36 @@ function App() {
   const [background, setBackground] = useState("#ffffff");
   const [isColorVisible, setIsColorVisible] = useState(true);
 
+  let hideColorTimeout, resetGameTimeout;
+  function randomColor(prevColor) {
+    let newColor;
+    do {
+      newColor = colors[Math.floor(Math.random() * colors.length)];
+    } while (newColor === prevColor);
 
-  function randomColor() {
-    return colors[Math.floor(Math.random() * colors.length)];
+    return newColor;
   }
 
-    function resetGame() {
-      setTargetColor(randomColor());
-      setStatus("");
-      setBackground("#ffffff");
-      setIsColorVisible(true);
-    }
+  function resetGame() {
+    const newColor = randomColor(targetColor);
+    setTargetColor(newColor);
+    setStatus("");
+    setBackground("#ffffff");
+    setIsColorVisible(true);
+  }
 
   function handleGuess(color) {
     if (color === targetColor) {
       setScore(score + 1);
       setStatus("Correct! 🎉 🎉 🎉");
       setBackground(color);
-      setIsColorVisible(false)
-      setTimeout(() => {
-        setBackground("#ffffff");
-        setIsColorVisible(true)
+      setIsColorVisible(false);
+
+      clearTimeout(hideColorTimeout);
+      clearTimeout(resetGameTimeout);
+      resetGameTimeout = setTimeout(() => {
+        // setBackground("#ffffff");
+        // setIsColorVisible(true)
         resetGame();
       }, 2000);
     } else {
@@ -43,12 +52,13 @@ function App() {
     }
   }
 
-  useEffect(()=>{
-    const timer = setTimeout(() => {
+  useEffect(() => {
+    clearTimeout(hideColorTimeout);
+    hideColorTimeout = setTimeout(() => {
       setIsColorVisible(false);
-    }, 1000)
-    return ()=> clearTimeout(timer);
-  }, [targetColor])
+    }, 1000);
+    return () => clearTimeout(hideColorTimeout);
+  }, [targetColor]);
 
   return (
     <main className="container" style={{ backgroundColor: background }}>
