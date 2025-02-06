@@ -14,9 +14,18 @@ function App() {
   const [status, setStatus] = useState("");
   const [background, setBackground] = useState("#ffffff");
   const [isColorVisible, setIsColorVisible] = useState(true);
+
+
   function randomColor() {
     return colors[Math.floor(Math.random() * colors.length)];
   }
+
+    function resetGame() {
+      setTargetColor(randomColor());
+      setStatus("");
+      setBackground("#ffffff");
+      setIsColorVisible(true);
+    }
 
   function handleGuess(color) {
     if (color === targetColor) {
@@ -27,17 +36,13 @@ function App() {
       setTimeout(() => {
         setBackground("#ffffff");
         setIsColorVisible(true)
+        resetGame();
       }, 2000);
     } else {
       setStatus("Wrong! Try again.❌");
     }
   }
-  function resetGame() {
-    setTargetColor(randomColor());
-    setStatus("");
-    setBackground("#ffffff");
-    setIsColorVisible(true)
-  }
+
   useEffect(()=>{
     const timer = setTimeout(() => {
       setIsColorVisible(false);
