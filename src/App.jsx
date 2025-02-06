@@ -34,6 +34,7 @@ function App() {
     setStatus("");
     setBackground("#ffffff");
   }
+  
   return (
     <main className="container" style={{backgroundColor: background}}>
       <h1>Color Guessing Game</h1>
